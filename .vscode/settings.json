@@ -1,0 +1,18 @@
+{
+  "files.exclude": {
+    "**/*.freezed.dart": true,
+    "**/*.g.dart": true,
+    "**/*.gg.dart": true,
+    "**/*.select.dart": true
+  },
+  "protoc": {
+    "path": "/opt/homebrew/bin/protoc",
+    "compile_on_save": true,
+    "options": [
+      "--proto_path=${workspaceRoot}/protos",
+      "--dart_out=${workspaceRoot}/lib/src/auth",
+      "--dart_out=${workspaceRoot}/lib/src/google",
+      "--dart_out=${workspaceRoot}/lib/src/pets"
+    ]
+  }
+}

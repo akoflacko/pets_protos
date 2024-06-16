@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package shanyraq;
+
+import "../lib/protos/google/protobuf/timestamp.proto";
+import "auth.proto";
+
+service Situations {
+    rpc CreateSituation (CreateSituationRequest) returns (SituationResponse);
+    rpc ListSituations (ListSituationsRequest) returns (ListSituationsResponse);
+    rpc GetSituation (GetSituationRequest) returns (SituationResponse);
+    rpc DeleteSituation (GetSituationRequest) returns (SituationResponse);
+    rpc UpdateSituation (CreateSituationRequest) returns (SituationResponse);
+}
+
+message CreateSituationRequest {
+    string name = 1;
+    SituationType type = 2;
+    string description = 3;
+    LatLng location = 4;
+}
+
+message ListSituationsRequest {
+    int64 limit = 1;
+    int64 fromId = 2;
+}
+
+message GetSituationRequest {
+    int64 id = 1;
+}
+
+message ListSituationsResponse {
+    repeated Situation situations = 1;
+}
+
+message SituationResponse {
+    Situation situation = 1;
+}
+
+message Situation {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    SituationType type = 4;
+    LatLng location = 5;
+    shanyraq.User author = 6;
+    google.protobuf.Timestamp createdAt = 7;
+    google.protobuf.Timestamp updatedAt = 8;
+}
+
+enum SituationType {
+    fireEmergency = 0;
+    medicalEmergency = 1;
+    evacuation = 2;
+    powerOutage = 3;
+    gasLeak = 4;
+    securityBreach = 5;
+    naturalDisaster = 6;
+    chemicalSpill = 7;
+    structuralDamage = 8;
+    communicationFailure = 9;
+}
+
+message LatLng {
+    double lat = 1;
+    double lng = 2;
+}

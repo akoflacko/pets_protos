@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package shanyraq;
+
+import "../lib/protos/google/protobuf/timestamp.proto";
+
+service Literary {
+    rpc CreateLiterary(CreateLiteraryRequest) returns (CreateLiteraryResponse);
+}
+
+enum Genre {
+    novel = 0;
+    poem = 1;
+    fairyTale = 2;
+    shortStory = 3;
+    novella = 4;
+    drama = 5;
+    comedy = 6;
+    tragedy = 7;
+}
+
+message CreateLiteraryRequest {
+    string title = 1;
+    string content = 2;
+    Genre genre = 3;
+}
+
+message CreateLiteraryResponse {
+    int64 id = 1;
+    string title = 2;
+    string content = 3;
+    Genre genre = 4;
+    int64 authorId = 5;
+    google.protobuf.Timestamp createdAt = 6;
+}

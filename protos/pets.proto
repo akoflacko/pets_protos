@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package shanyraq;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "auth.proto";
+
+// Generated according to https://cloud.google.com/apis/design/standard_methods
+service Pets {
+    rpc ListPets(ListPetsRequest) returns (ListPetsResponse);
+
+    rpc GetPet(GetPetRequest) returns (Pet);
+
+    rpc CreatePet(CreatePetRequest) returns (Pet);
+
+    rpc UpdatePet(UpdatePetRequest) returns (Pet);
+
+    rpc DeletePet(DeletePetRequest) returns (google.protobuf.Empty);
+}
+
+message Pet {
+    int64 id = 1;
+    string passportId = 2;
+    string name = 3;
+    string description = 4;
+    shanyraq.User owner = 5;
+    string type = 6;
+    string breed = 7;
+    string color = 8;
+    double weight = 9;
+    int64 height = 10;
+    int64 length = 11;
+    google.protobuf.Timestamp birthAt = 12;
+    google.protobuf.Timestamp createdAt = 13;
+    google.protobuf.Timestamp updatedAt = 14;
+    optional string imageUrl = 15;
+}
+
+message CreatePetModel {
+    string name = 1;
+    string description = 2;
+    int64 ownerId = 3;
+    string type = 4;
+    string breed = 5;
+    string color = 6;
+    double weight = 7;
+    int64 height = 8;
+    int64 length = 9;
+    google.protobuf.Timestamp birthAt = 10;
+    optional int64 mediaId = 11;
+}
+
+message ListPetsRequest {
+    optional int64 ownerId = 1;
+    optional int32 limit = 2;
+    optional int64 fromId = 3;
+}
+
+message ListPetsResponse {
+    repeated Pet pets = 1;
+}
+
+message GetPetRequest {
+    optional int64 id = 1;
+    optional string passportId = 2;
+}
+
+message CreatePetRequest {
+    CreatePetModel pet = 1;
+}
+
+message UpdatePetRequest {
+    int64 id = 1;
+    CreatePetModel pet = 2;
+}
+
+message DeletePetRequest {
+    int64 id = 1;
+}
