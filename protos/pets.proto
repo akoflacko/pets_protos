@@ -36,7 +36,7 @@ message Pet {
     google.protobuf.Timestamp birthAt = 12;
     google.protobuf.Timestamp createdAt = 13;
     google.protobuf.Timestamp updatedAt = 14;
-    google.protobuf.Timestamp lastVacinationAt = 15;
+    optional google.protobuf.Timestamp lastVacinationAt = 15;
     optional string imageUrl = 16;
 }
 

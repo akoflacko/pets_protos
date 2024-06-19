@@ -72,6 +72,7 @@ extension PetProtoMapper on Pet {
     final birthAt = this.birthAt.toDateTime();
     final createdAt = this.createdAt.toDateTime();
     final updatedAt = this.updatedAt.toDateTime();
+    final lastVacinationAt = this.lastVacinationAt.toDateTime();
     final image = imageUrl;
 
     return petType.map(
@@ -89,6 +90,7 @@ extension PetProtoMapper on Pet {
         birthAt: birthAt,
         createdAt: createdAt,
         updatedAt: updatedAt,
+        lastVacinationAt: lastVacinationAt,
         image: image,
       ),
       horse: () => Pet$Horse(
@@ -105,6 +107,7 @@ extension PetProtoMapper on Pet {
         birthAt: birthAt,
         createdAt: createdAt,
         updatedAt: updatedAt,
+        lastVacinationAt: lastVacinationAt,
         image: image,
       ),
       camel: () => Pet$Camel(
@@ -121,6 +124,7 @@ extension PetProtoMapper on Pet {
         birthAt: birthAt,
         createdAt: createdAt,
         updatedAt: updatedAt,
+        lastVacinationAt: lastVacinationAt,
         image: image,
       ),
       goat: () => Pet$Goat(
@@ -137,6 +141,7 @@ extension PetProtoMapper on Pet {
         birthAt: birthAt,
         createdAt: createdAt,
         updatedAt: updatedAt,
+        lastVacinationAt: lastVacinationAt,
         image: image,
       ),
       dog: () => Pet$Dog(
@@ -153,6 +158,7 @@ extension PetProtoMapper on Pet {
         birthAt: birthAt,
         createdAt: createdAt,
         updatedAt: updatedAt,
+        lastVacinationAt: lastVacinationAt,
         image: image,
       ),
       cat: () => Pet$Cat(
@@ -169,6 +175,7 @@ extension PetProtoMapper on Pet {
         birthAt: birthAt,
         createdAt: createdAt,
         updatedAt: updatedAt,
+        lastVacinationAt: lastVacinationAt,
         image: image,
       ),
     );

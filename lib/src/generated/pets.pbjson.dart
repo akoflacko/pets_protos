@@ -31,10 +31,11 @@ const Pet$json = {
     {'1': 'birthAt', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthAt'},
     {'1': 'createdAt', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'updatedAt', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    {'1': 'lastVacinationAt', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastVacinationAt'},
-    {'1': 'imageUrl', '3': 16, '4': 1, '5': 9, '9': 0, '10': 'imageUrl', '17': true},
+    {'1': 'lastVacinationAt', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastVacinationAt', '17': true},
+    {'1': 'imageUrl', '3': 16, '4': 1, '5': 9, '9': 1, '10': 'imageUrl', '17': true},
   ],
   '8': [
+    {'1': '_lastVacinationAt'},
     {'1': '_imageUrl'},
   ],
 };
@@ -49,9 +50,9 @@ final $typed_data.Uint8List petDescriptor = $convert.base64Decode(
     '5ndGgSNAoHYmlydGhBdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2JpcnRo'
     'QXQSOAoJY3JlYXRlZEF0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYX'
     'RlZEF0EjgKCXVwZGF0ZWRBdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVw'
-    'ZGF0ZWRBdBJGChBsYXN0VmFjaW5hdGlvbkF0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
-    'VzdGFtcFIQbGFzdFZhY2luYXRpb25BdBIfCghpbWFnZVVybBgQIAEoCUgAUghpbWFnZVVybIgB'
-    'AUILCglfaW1hZ2VVcmw=');
+    'ZGF0ZWRBdBJLChBsYXN0VmFjaW5hdGlvbkF0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcEgAUhBsYXN0VmFjaW5hdGlvbkF0iAEBEh8KCGltYWdlVXJsGBAgASgJSAFSCGltYWdl'
+    'VXJsiAEBQhMKEV9sYXN0VmFjaW5hdGlvbkF0QgsKCV9pbWFnZVVybA==');
 
 @$core.Deprecated('Use createPetModelDescriptor instead')
 const CreatePetModel$json = {
