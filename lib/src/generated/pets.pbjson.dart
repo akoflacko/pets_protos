@@ -31,7 +31,8 @@ const Pet$json = {
     {'1': 'birthAt', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthAt'},
     {'1': 'createdAt', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'updatedAt', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    {'1': 'imageUrl', '3': 15, '4': 1, '5': 9, '9': 0, '10': 'imageUrl', '17': true},
+    {'1': 'lastVacinationAt', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastVacinationAt'},
+    {'1': 'imageUrl', '3': 16, '4': 1, '5': 9, '9': 0, '10': 'imageUrl', '17': true},
   ],
   '8': [
     {'1': '_imageUrl'},
@@ -48,7 +49,9 @@ final $typed_data.Uint8List petDescriptor = $convert.base64Decode(
     '5ndGgSNAoHYmlydGhBdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2JpcnRo'
     'QXQSOAoJY3JlYXRlZEF0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYX'
     'RlZEF0EjgKCXVwZGF0ZWRBdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVw'
-    'ZGF0ZWRBdBIfCghpbWFnZVVybBgPIAEoCUgAUghpbWFnZVVybIgBAUILCglfaW1hZ2VVcmw=');
+    'ZGF0ZWRBdBJGChBsYXN0VmFjaW5hdGlvbkF0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFIQbGFzdFZhY2luYXRpb25BdBIfCghpbWFnZVVybBgQIAEoCUgAUghpbWFnZVVybIgB'
+    'AUILCglfaW1hZ2VVcmw=');
 
 @$core.Deprecated('Use createPetModelDescriptor instead')
 const CreatePetModel$json = {
@@ -169,4 +172,16 @@ const DeletePetRequest$json = {
 /// Descriptor for `DeletePetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deletePetRequestDescriptor = $convert.base64Decode(
     'ChBEZWxldGVQZXRSZXF1ZXN0Eg4KAmlkGAEgASgDUgJpZA==');
+
+@$core.Deprecated('Use updateVacinationRequestDescriptor instead')
+const UpdateVacinationRequest$json = {
+  '1': 'UpdateVacinationRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `UpdateVacinationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateVacinationRequestDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVWYWNpbmF0aW9uUmVxdWVzdBIOCgJpZBgBIAEoA1ICaWQ=');
 

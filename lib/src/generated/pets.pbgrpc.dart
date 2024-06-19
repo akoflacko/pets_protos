@@ -42,6 +42,10 @@ class PetsClient extends $grpc.Client {
       '/shanyraq.Pets/DeletePet',
       ($1.DeletePetRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
+  static final _$updateVacination = $grpc.ClientMethod<$1.UpdateVacinationRequest, $1.Pet>(
+      '/shanyraq.Pets/UpdateVacination',
+      ($1.UpdateVacinationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Pet.fromBuffer(value));
 
   PetsClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -67,6 +71,10 @@ class PetsClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.Empty> deletePet($1.DeletePetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deletePet, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.Pet> updateVacination($1.UpdateVacinationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateVacination, request, options: options);
   }
 }
 
@@ -110,6 +118,13 @@ abstract class PetsServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.DeletePetRequest.fromBuffer(value),
         ($2.Empty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.UpdateVacinationRequest, $1.Pet>(
+        'UpdateVacination',
+        updateVacination_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.UpdateVacinationRequest.fromBuffer(value),
+        ($1.Pet value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.ListPetsResponse> listPets_Pre($grpc.ServiceCall call, $async.Future<$1.ListPetsRequest> request) async {
@@ -132,9 +147,14 @@ abstract class PetsServiceBase extends $grpc.Service {
     return deletePet(call, await request);
   }
 
+  $async.Future<$1.Pet> updateVacination_Pre($grpc.ServiceCall call, $async.Future<$1.UpdateVacinationRequest> request) async {
+    return updateVacination(call, await request);
+  }
+
   $async.Future<$1.ListPetsResponse> listPets($grpc.ServiceCall call, $1.ListPetsRequest request);
   $async.Future<$1.Pet> getPet($grpc.ServiceCall call, $1.GetPetRequest request);
   $async.Future<$1.Pet> createPet($grpc.ServiceCall call, $1.CreatePetRequest request);
   $async.Future<$1.Pet> updatePet($grpc.ServiceCall call, $1.UpdatePetRequest request);
   $async.Future<$2.Empty> deletePet($grpc.ServiceCall call, $1.DeletePetRequest request);
+  $async.Future<$1.Pet> updateVacination($grpc.ServiceCall call, $1.UpdateVacinationRequest request);
 }

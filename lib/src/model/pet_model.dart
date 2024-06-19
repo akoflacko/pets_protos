@@ -14,6 +14,7 @@ sealed class PetModel {
     required this.birthAt,
     required this.createdAt,
     required this.updatedAt,
+    this.lastVacinationAt,
     this.image,
   });
 
@@ -30,6 +31,7 @@ sealed class PetModel {
   final DateTime createdAt;
   final DateTime updatedAt;
   final String? image;
+  final DateTime? lastVacinationAt;
 
   abstract final PetType type;
   abstract final Breed breed;
@@ -48,6 +50,7 @@ sealed class PetModel {
     required DateTime birthAt,
     required DateTime createdAt,
     required DateTime updatedAt,
+    DateTime? lastVacinationAt,
     String? image,
   }) = Pet$Dog;
 
@@ -65,6 +68,7 @@ sealed class PetModel {
     required DateTime birthAt,
     required DateTime createdAt,
     required DateTime updatedAt,
+    DateTime? lastVacinationAt,
     String? image,
   }) = Pet$Cat;
 
@@ -82,6 +86,7 @@ sealed class PetModel {
     required DateTime birthAt,
     required DateTime createdAt,
     required DateTime updatedAt,
+    DateTime? lastVacinationAt,
     String? image,
   }) = Pet$Cow;
 
@@ -99,6 +104,7 @@ sealed class PetModel {
     required DateTime birthAt,
     required DateTime createdAt,
     required DateTime updatedAt,
+    DateTime? lastVacinationAt,
     String? image,
   }) = Pet$Goat;
 
@@ -116,6 +122,7 @@ sealed class PetModel {
     required DateTime birthAt,
     required DateTime createdAt,
     required DateTime updatedAt,
+    DateTime? lastVacinationAt,
     String? image,
   }) = Pet$Camel;
 
@@ -133,6 +140,7 @@ sealed class PetModel {
     required DateTime birthAt,
     required DateTime createdAt,
     required DateTime updatedAt,
+    DateTime? lastVacinationAt,
     String? image,
   }) = Pet$Horse;
 
@@ -207,6 +215,7 @@ class Pet$Dog extends PetModel {
     required super.birthAt,
     required super.createdAt,
     required super.updatedAt,
+    super.lastVacinationAt,
     super.image,
   }) : super._();
 
@@ -232,7 +241,9 @@ class Pet$Dog extends PetModel {
         other.length == length &&
         other.birthAt == birthAt &&
         other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
+        other.updatedAt == updatedAt &&
+        other.lastVacinationAt == lastVacinationAt &&
+        other.image == image;
   }
 
   @override
@@ -249,7 +260,9 @@ class Pet$Dog extends PetModel {
       length.hashCode ^
       birthAt.hashCode ^
       createdAt.hashCode ^
-      updatedAt.hashCode;
+      updatedAt.hashCode ^
+      lastVacinationAt.hashCode ^
+      image.hashCode;
 }
 
 class Pet$Cat extends PetModel {
@@ -267,6 +280,7 @@ class Pet$Cat extends PetModel {
     required super.birthAt,
     required super.createdAt,
     required super.updatedAt,
+    super.lastVacinationAt,
     super.image,
   }) : super._();
 
@@ -292,7 +306,9 @@ class Pet$Cat extends PetModel {
         other.length == length &&
         other.birthAt == birthAt &&
         other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
+        other.updatedAt == updatedAt &&
+        other.lastVacinationAt == lastVacinationAt &&
+        other.image == image;
   }
 
   @override
@@ -309,7 +325,9 @@ class Pet$Cat extends PetModel {
       length.hashCode ^
       birthAt.hashCode ^
       createdAt.hashCode ^
-      updatedAt.hashCode;
+      updatedAt.hashCode ^
+      lastVacinationAt.hashCode ^
+      image.hashCode;
 }
 
 class Pet$Cow extends PetModel {
@@ -327,6 +345,7 @@ class Pet$Cow extends PetModel {
     required super.birthAt,
     required super.createdAt,
     required super.updatedAt,
+    super.lastVacinationAt,
     super.image,
   }) : super._();
 
@@ -352,7 +371,9 @@ class Pet$Cow extends PetModel {
         other.length == length &&
         other.birthAt == birthAt &&
         other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
+        other.updatedAt == updatedAt &&
+        other.lastVacinationAt == lastVacinationAt &&
+        other.image == image;
   }
 
   @override
@@ -369,7 +390,9 @@ class Pet$Cow extends PetModel {
       length.hashCode ^
       birthAt.hashCode ^
       createdAt.hashCode ^
-      updatedAt.hashCode;
+      updatedAt.hashCode ^
+      lastVacinationAt.hashCode ^
+      image.hashCode;
 }
 
 class Pet$Goat extends PetModel {
@@ -387,6 +410,7 @@ class Pet$Goat extends PetModel {
     required super.birthAt,
     required super.createdAt,
     required super.updatedAt,
+    super.lastVacinationAt,
     super.image,
   }) : super._();
 
@@ -412,7 +436,9 @@ class Pet$Goat extends PetModel {
         other.length == length &&
         other.birthAt == birthAt &&
         other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
+        other.updatedAt == updatedAt &&
+        other.lastVacinationAt == lastVacinationAt &&
+        other.image == image;
   }
 
   @override
@@ -429,7 +455,9 @@ class Pet$Goat extends PetModel {
       length.hashCode ^
       birthAt.hashCode ^
       createdAt.hashCode ^
-      updatedAt.hashCode;
+      updatedAt.hashCode ^
+      lastVacinationAt.hashCode ^
+      image.hashCode;
 }
 
 class Pet$Camel extends PetModel {
@@ -447,6 +475,7 @@ class Pet$Camel extends PetModel {
     required super.birthAt,
     required super.createdAt,
     required super.updatedAt,
+    super.lastVacinationAt,
     super.image,
   }) : super._();
 
@@ -472,7 +501,9 @@ class Pet$Camel extends PetModel {
         other.length == length &&
         other.birthAt == birthAt &&
         other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
+        other.updatedAt == updatedAt &&
+        other.lastVacinationAt == lastVacinationAt &&
+        other.image == image;
   }
 
   @override
@@ -489,7 +520,9 @@ class Pet$Camel extends PetModel {
       length.hashCode ^
       birthAt.hashCode ^
       createdAt.hashCode ^
-      updatedAt.hashCode;
+      updatedAt.hashCode ^
+      lastVacinationAt.hashCode ^
+      image.hashCode;
 }
 
 class Pet$Horse extends PetModel {
@@ -507,6 +540,7 @@ class Pet$Horse extends PetModel {
     required super.birthAt,
     required super.createdAt,
     required super.updatedAt,
+    super.lastVacinationAt,
     super.image,
   }) : super._();
 
@@ -532,7 +566,9 @@ class Pet$Horse extends PetModel {
         other.length == length &&
         other.birthAt == birthAt &&
         other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
+        other.updatedAt == updatedAt &&
+        other.lastVacinationAt == lastVacinationAt &&
+        other.image == image;
   }
 
   @override
@@ -549,5 +585,7 @@ class Pet$Horse extends PetModel {
       length.hashCode ^
       birthAt.hashCode ^
       createdAt.hashCode ^
-      updatedAt.hashCode;
+      updatedAt.hashCode ^
+      lastVacinationAt.hashCode ^
+      image.hashCode;
 }

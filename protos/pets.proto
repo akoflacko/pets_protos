@@ -17,6 +17,8 @@ service Pets {
     rpc UpdatePet(UpdatePetRequest) returns (Pet);
 
     rpc DeletePet(DeletePetRequest) returns (google.protobuf.Empty);
+
+    rpc UpdateVacination(UpdateVacinationRequest) returns (Pet);
 }
 
 message Pet {
@@ -34,7 +36,8 @@ message Pet {
     google.protobuf.Timestamp birthAt = 12;
     google.protobuf.Timestamp createdAt = 13;
     google.protobuf.Timestamp updatedAt = 14;
-    optional string imageUrl = 15;
+    google.protobuf.Timestamp lastVacinationAt = 15;
+    optional string imageUrl = 16;
 }
 
 message CreatePetModel {
@@ -76,5 +79,9 @@ message UpdatePetRequest {
 }
 
 message DeletePetRequest {
+    int64 id = 1;
+}
+
+message UpdateVacinationRequest {
     int64 id = 1;
 }

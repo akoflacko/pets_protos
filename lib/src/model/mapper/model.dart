@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
-import 'package:protos/protos.dart';
 
+import 'package:protos/protos.dart';
 import 'package:protos/src/model/model.dart' as model;
 
 extension UserMapper on model.UserModel {
@@ -48,6 +48,7 @@ extension PetModelMapper on model.PetModel {
         birthAt: Timestamp.fromDateTime(birthAt),
         createdAt: Timestamp.fromDateTime(createdAt),
         updatedAt: Timestamp.fromDateTime(updatedAt),
+        lastVacinationAt: lastVacinationAt != null ? Timestamp.fromDateTime(lastVacinationAt!) : null,
         imageUrl: image,
       );
 }

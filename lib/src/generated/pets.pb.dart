@@ -33,6 +33,7 @@ class Pet extends $pb.GeneratedMessage {
     $3.Timestamp? birthAt,
     $3.Timestamp? createdAt,
     $3.Timestamp? updatedAt,
+    $3.Timestamp? lastVacinationAt,
     $core.String? imageUrl,
   }) {
     final $result = create();
@@ -78,6 +79,9 @@ class Pet extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       $result.updatedAt = updatedAt;
     }
+    if (lastVacinationAt != null) {
+      $result.lastVacinationAt = lastVacinationAt;
+    }
     if (imageUrl != null) {
       $result.imageUrl = imageUrl;
     }
@@ -87,8 +91,7 @@ class Pet extends $pb.GeneratedMessage {
   factory Pet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Pet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Pet',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Pet', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'passportId', protoName: 'passportId')
     ..aOS(3, _omitFieldNames ? '' : 'name')
@@ -103,16 +106,20 @@ class Pet extends $pb.GeneratedMessage {
     ..aOM<$3.Timestamp>(12, _omitFieldNames ? '' : 'birthAt', protoName: 'birthAt', subBuilder: $3.Timestamp.create)
     ..aOM<$3.Timestamp>(13, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $3.Timestamp.create)
     ..aOM<$3.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $3.Timestamp.create)
-    ..aOS(15, _omitFieldNames ? '' : 'imageUrl', protoName: 'imageUrl')
-    ..hasRequiredFields = false;
+    ..aOM<$3.Timestamp>(15, _omitFieldNames ? '' : 'lastVacinationAt', protoName: 'lastVacinationAt', subBuilder: $3.Timestamp.create)
+    ..aOS(16, _omitFieldNames ? '' : 'imageUrl', protoName: 'imageUrl')
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   Pet clone() => Pet()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
   Pet copyWith(void Function(Pet) updates) => super.copyWith((message) => updates(message as Pet)) as Pet;
 
   $pb.BuilderInfo get info_ => _i;
@@ -128,10 +135,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) {
-    $_setInt64(0, v);
-  }
-
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -140,10 +144,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get passportId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set passportId($core.String v) {
-    $_setString(1, v);
-  }
-
+  set passportId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPassportId() => $_has(1);
   @$pb.TagNumber(2)
@@ -152,10 +153,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set name($core.String v) {
-    $_setString(2, v);
-  }
-
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
@@ -164,10 +162,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get description => $_getSZ(3);
   @$pb.TagNumber(4)
-  set description($core.String v) {
-    $_setString(3, v);
-  }
-
+  set description($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
@@ -176,10 +171,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $0.User get owner => $_getN(4);
   @$pb.TagNumber(5)
-  set owner($0.User v) {
-    setField(5, v);
-  }
-
+  set owner($0.User v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasOwner() => $_has(4);
   @$pb.TagNumber(5)
@@ -190,10 +182,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get type => $_getSZ(5);
   @$pb.TagNumber(6)
-  set type($core.String v) {
-    $_setString(5, v);
-  }
-
+  set type($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasType() => $_has(5);
   @$pb.TagNumber(6)
@@ -202,10 +191,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get breed => $_getSZ(6);
   @$pb.TagNumber(7)
-  set breed($core.String v) {
-    $_setString(6, v);
-  }
-
+  set breed($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasBreed() => $_has(6);
   @$pb.TagNumber(7)
@@ -214,10 +200,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.String get color => $_getSZ(7);
   @$pb.TagNumber(8)
-  set color($core.String v) {
-    $_setString(7, v);
-  }
-
+  set color($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
   $core.bool hasColor() => $_has(7);
   @$pb.TagNumber(8)
@@ -226,10 +209,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.double get weight => $_getN(8);
   @$pb.TagNumber(9)
-  set weight($core.double v) {
-    $_setDouble(8, v);
-  }
-
+  set weight($core.double v) { $_setDouble(8, v); }
   @$pb.TagNumber(9)
   $core.bool hasWeight() => $_has(8);
   @$pb.TagNumber(9)
@@ -238,10 +218,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $fixnum.Int64 get height => $_getI64(9);
   @$pb.TagNumber(10)
-  set height($fixnum.Int64 v) {
-    $_setInt64(9, v);
-  }
-
+  set height($fixnum.Int64 v) { $_setInt64(9, v); }
   @$pb.TagNumber(10)
   $core.bool hasHeight() => $_has(9);
   @$pb.TagNumber(10)
@@ -250,10 +227,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $fixnum.Int64 get length => $_getI64(10);
   @$pb.TagNumber(11)
-  set length($fixnum.Int64 v) {
-    $_setInt64(10, v);
-  }
-
+  set length($fixnum.Int64 v) { $_setInt64(10, v); }
   @$pb.TagNumber(11)
   $core.bool hasLength() => $_has(10);
   @$pb.TagNumber(11)
@@ -262,10 +236,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $3.Timestamp get birthAt => $_getN(11);
   @$pb.TagNumber(12)
-  set birthAt($3.Timestamp v) {
-    setField(12, v);
-  }
-
+  set birthAt($3.Timestamp v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasBirthAt() => $_has(11);
   @$pb.TagNumber(12)
@@ -276,10 +247,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $3.Timestamp get createdAt => $_getN(12);
   @$pb.TagNumber(13)
-  set createdAt($3.Timestamp v) {
-    setField(13, v);
-  }
-
+  set createdAt($3.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasCreatedAt() => $_has(12);
   @$pb.TagNumber(13)
@@ -290,10 +258,7 @@ class Pet extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $3.Timestamp get updatedAt => $_getN(13);
   @$pb.TagNumber(14)
-  set updatedAt($3.Timestamp v) {
-    setField(14, v);
-  }
-
+  set updatedAt($3.Timestamp v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasUpdatedAt() => $_has(13);
   @$pb.TagNumber(14)
@@ -302,16 +267,24 @@ class Pet extends $pb.GeneratedMessage {
   $3.Timestamp ensureUpdatedAt() => $_ensure(13);
 
   @$pb.TagNumber(15)
-  $core.String get imageUrl => $_getSZ(14);
+  $3.Timestamp get lastVacinationAt => $_getN(14);
   @$pb.TagNumber(15)
-  set imageUrl($core.String v) {
-    $_setString(14, v);
-  }
+  set lastVacinationAt($3.Timestamp v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasLastVacinationAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLastVacinationAt() => clearField(15);
+  @$pb.TagNumber(15)
+  $3.Timestamp ensureLastVacinationAt() => $_ensure(14);
 
-  @$pb.TagNumber(15)
-  $core.bool hasImageUrl() => $_has(14);
-  @$pb.TagNumber(15)
-  void clearImageUrl() => clearField(15);
+  @$pb.TagNumber(16)
+  $core.String get imageUrl => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set imageUrl($core.String v) { $_setString(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasImageUrl() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearImageUrl() => clearField(16);
 }
 
 class CreatePetModel extends $pb.GeneratedMessage {
@@ -365,12 +338,10 @@ class CreatePetModel extends $pb.GeneratedMessage {
     return $result;
   }
   CreatePetModel._() : super();
-  factory CreatePetModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory CreatePetModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreatePetModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePetModel',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePetModel', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'description')
     ..aInt64(3, _omitFieldNames ? '' : 'ownerId', protoName: 'ownerId')
@@ -382,15 +353,18 @@ class CreatePetModel extends $pb.GeneratedMessage {
     ..aInt64(9, _omitFieldNames ? '' : 'length')
     ..aOM<$3.Timestamp>(10, _omitFieldNames ? '' : 'birthAt', protoName: 'birthAt', subBuilder: $3.Timestamp.create)
     ..aInt64(11, _omitFieldNames ? '' : 'mediaId', protoName: 'mediaId')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   CreatePetModel clone() => CreatePetModel()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
   CreatePetModel copyWith(void Function(CreatePetModel) updates) => super.copyWith((message) => updates(message as CreatePetModel)) as CreatePetModel;
 
   $pb.BuilderInfo get info_ => _i;
@@ -406,10 +380,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) {
-    $_setString(0, v);
-  }
-
+  set name($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
@@ -418,10 +389,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
-  set description($core.String v) {
-    $_setString(1, v);
-  }
-
+  set description($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasDescription() => $_has(1);
   @$pb.TagNumber(2)
@@ -430,10 +398,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $fixnum.Int64 get ownerId => $_getI64(2);
   @$pb.TagNumber(3)
-  set ownerId($fixnum.Int64 v) {
-    $_setInt64(2, v);
-  }
-
+  set ownerId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasOwnerId() => $_has(2);
   @$pb.TagNumber(3)
@@ -442,10 +407,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get type => $_getSZ(3);
   @$pb.TagNumber(4)
-  set type($core.String v) {
-    $_setString(3, v);
-  }
-
+  set type($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
@@ -454,10 +416,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get breed => $_getSZ(4);
   @$pb.TagNumber(5)
-  set breed($core.String v) {
-    $_setString(4, v);
-  }
-
+  set breed($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasBreed() => $_has(4);
   @$pb.TagNumber(5)
@@ -466,10 +425,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get color => $_getSZ(5);
   @$pb.TagNumber(6)
-  set color($core.String v) {
-    $_setString(5, v);
-  }
-
+  set color($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasColor() => $_has(5);
   @$pb.TagNumber(6)
@@ -478,10 +434,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.double get weight => $_getN(6);
   @$pb.TagNumber(7)
-  set weight($core.double v) {
-    $_setDouble(6, v);
-  }
-
+  set weight($core.double v) { $_setDouble(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasWeight() => $_has(6);
   @$pb.TagNumber(7)
@@ -490,10 +443,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $fixnum.Int64 get height => $_getI64(7);
   @$pb.TagNumber(8)
-  set height($fixnum.Int64 v) {
-    $_setInt64(7, v);
-  }
-
+  set height($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
   $core.bool hasHeight() => $_has(7);
   @$pb.TagNumber(8)
@@ -502,10 +452,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $fixnum.Int64 get length => $_getI64(8);
   @$pb.TagNumber(9)
-  set length($fixnum.Int64 v) {
-    $_setInt64(8, v);
-  }
-
+  set length($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
   $core.bool hasLength() => $_has(8);
   @$pb.TagNumber(9)
@@ -514,10 +461,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $3.Timestamp get birthAt => $_getN(9);
   @$pb.TagNumber(10)
-  set birthAt($3.Timestamp v) {
-    setField(10, v);
-  }
-
+  set birthAt($3.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasBirthAt() => $_has(9);
   @$pb.TagNumber(10)
@@ -528,10 +472,7 @@ class CreatePetModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $fixnum.Int64 get mediaId => $_getI64(10);
   @$pb.TagNumber(11)
-  set mediaId($fixnum.Int64 v) {
-    $_setInt64(10, v);
-  }
-
+  set mediaId($fixnum.Int64 v) { $_setInt64(10, v); }
   @$pb.TagNumber(11)
   $core.bool hasMediaId() => $_has(10);
   @$pb.TagNumber(11)
@@ -557,26 +498,26 @@ class ListPetsRequest extends $pb.GeneratedMessage {
     return $result;
   }
   ListPetsRequest._() : super();
-  factory ListPetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory ListPetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPetsRequest',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'ownerId', protoName: 'ownerId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
     ..aInt64(3, _omitFieldNames ? '' : 'fromId', protoName: 'fromId')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   ListPetsRequest clone() => ListPetsRequest()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ListPetsRequest copyWith(void Function(ListPetsRequest) updates) =>
-      super.copyWith((message) => updates(message as ListPetsRequest)) as ListPetsRequest;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPetsRequest copyWith(void Function(ListPetsRequest) updates) => super.copyWith((message) => updates(message as ListPetsRequest)) as ListPetsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
@@ -591,10 +532,7 @@ class ListPetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get ownerId => $_getI64(0);
   @$pb.TagNumber(1)
-  set ownerId($fixnum.Int64 v) {
-    $_setInt64(0, v);
-  }
-
+  set ownerId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasOwnerId() => $_has(0);
   @$pb.TagNumber(1)
@@ -603,10 +541,7 @@ class ListPetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.int get limit => $_getIZ(1);
   @$pb.TagNumber(2)
-  set limit($core.int v) {
-    $_setSignedInt32(1, v);
-  }
-
+  set limit($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasLimit() => $_has(1);
   @$pb.TagNumber(2)
@@ -615,10 +550,7 @@ class ListPetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $fixnum.Int64 get fromId => $_getI64(2);
   @$pb.TagNumber(3)
-  set fromId($fixnum.Int64 v) {
-    $_setInt64(2, v);
-  }
-
+  set fromId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasFromId() => $_has(2);
   @$pb.TagNumber(3)
@@ -636,24 +568,24 @@ class ListPetsResponse extends $pb.GeneratedMessage {
     return $result;
   }
   ListPetsResponse._() : super();
-  factory ListPetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory ListPetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPetsResponse',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPetsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..pc<Pet>(1, _omitFieldNames ? '' : 'pets', $pb.PbFieldType.PM, subBuilder: Pet.create)
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   ListPetsResponse clone() => ListPetsResponse()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  ListPetsResponse copyWith(void Function(ListPetsResponse) updates) =>
-      super.copyWith((message) => updates(message as ListPetsResponse)) as ListPetsResponse;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPetsResponse copyWith(void Function(ListPetsResponse) updates) => super.copyWith((message) => updates(message as ListPetsResponse)) as ListPetsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
@@ -684,23 +616,24 @@ class GetPetRequest extends $pb.GeneratedMessage {
     return $result;
   }
   GetPetRequest._() : super();
-  factory GetPetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory GetPetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPetRequest',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'passportId', protoName: 'passportId')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   GetPetRequest clone() => GetPetRequest()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
   GetPetRequest copyWith(void Function(GetPetRequest) updates) => super.copyWith((message) => updates(message as GetPetRequest)) as GetPetRequest;
 
   $pb.BuilderInfo get info_ => _i;
@@ -716,10 +649,7 @@ class GetPetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) {
-    $_setInt64(0, v);
-  }
-
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -728,10 +658,7 @@ class GetPetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get passportId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set passportId($core.String v) {
-    $_setString(1, v);
-  }
-
+  set passportId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPassportId() => $_has(1);
   @$pb.TagNumber(2)
@@ -749,24 +676,24 @@ class CreatePetRequest extends $pb.GeneratedMessage {
     return $result;
   }
   CreatePetRequest._() : super();
-  factory CreatePetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory CreatePetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreatePetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePetRequest',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aOM<CreatePetModel>(1, _omitFieldNames ? '' : 'pet', subBuilder: CreatePetModel.create)
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   CreatePetRequest clone() => CreatePetRequest()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  CreatePetRequest copyWith(void Function(CreatePetRequest) updates) =>
-      super.copyWith((message) => updates(message as CreatePetRequest)) as CreatePetRequest;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreatePetRequest copyWith(void Function(CreatePetRequest) updates) => super.copyWith((message) => updates(message as CreatePetRequest)) as CreatePetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
@@ -781,10 +708,7 @@ class CreatePetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   CreatePetModel get pet => $_getN(0);
   @$pb.TagNumber(1)
-  set pet(CreatePetModel v) {
-    setField(1, v);
-  }
-
+  set pet(CreatePetModel v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPet() => $_has(0);
   @$pb.TagNumber(1)
@@ -808,25 +732,25 @@ class UpdatePetRequest extends $pb.GeneratedMessage {
     return $result;
   }
   UpdatePetRequest._() : super();
-  factory UpdatePetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory UpdatePetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdatePetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePetRequest',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
     ..aOM<CreatePetModel>(2, _omitFieldNames ? '' : 'pet', subBuilder: CreatePetModel.create)
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UpdatePetRequest clone() => UpdatePetRequest()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  UpdatePetRequest copyWith(void Function(UpdatePetRequest) updates) =>
-      super.copyWith((message) => updates(message as UpdatePetRequest)) as UpdatePetRequest;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdatePetRequest copyWith(void Function(UpdatePetRequest) updates) => super.copyWith((message) => updates(message as UpdatePetRequest)) as UpdatePetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
@@ -841,10 +765,7 @@ class UpdatePetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) {
-    $_setInt64(0, v);
-  }
-
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -853,10 +774,7 @@ class UpdatePetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   CreatePetModel get pet => $_getN(1);
   @$pb.TagNumber(2)
-  set pet(CreatePetModel v) {
-    setField(2, v);
-  }
-
+  set pet(CreatePetModel v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPet() => $_has(1);
   @$pb.TagNumber(2)
@@ -876,24 +794,24 @@ class DeletePetRequest extends $pb.GeneratedMessage {
     return $result;
   }
   DeletePetRequest._() : super();
-  factory DeletePetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+  factory DeletePetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeletePetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeletePetRequest',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeletePetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   DeletePetRequest clone() => DeletePetRequest()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  DeletePetRequest copyWith(void Function(DeletePetRequest) updates) =>
-      super.copyWith((message) => updates(message as DeletePetRequest)) as DeletePetRequest;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeletePetRequest copyWith(void Function(DeletePetRequest) updates) => super.copyWith((message) => updates(message as DeletePetRequest)) as DeletePetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
@@ -908,15 +826,63 @@ class DeletePetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) {
-    $_setInt64(0, v);
-  }
-
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 }
+
+class UpdateVacinationRequest extends $pb.GeneratedMessage {
+  factory UpdateVacinationRequest({
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  UpdateVacinationRequest._() : super();
+  factory UpdateVacinationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateVacinationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateVacinationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'shanyraq'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateVacinationRequest clone() => UpdateVacinationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateVacinationRequest copyWith(void Function(UpdateVacinationRequest) updates) => super.copyWith((message) => updates(message as UpdateVacinationRequest)) as UpdateVacinationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateVacinationRequest create() => UpdateVacinationRequest._();
+  UpdateVacinationRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateVacinationRequest> createRepeated() => $pb.PbList<UpdateVacinationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateVacinationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateVacinationRequest>(create);
+  static UpdateVacinationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
